@@ -36,7 +36,7 @@ SECRET_KEY = '4ry^*^cpdtm%8-vly#c%8w2r6h^855dwm!*%b_ot6*y)^ids_j'
 DEBUG = dev
 
 
-ALLOWED_HOSTS = [os.environ.get('HOSTNAME'), 'localhost', 'mb-django-todo.herokuapp.com']
+ALLOWED_HOSTS = [os.environ.get('HOSTNAME'), 'localhost']
 # 'mb-django-todo.herokuapp.com']
 
 
