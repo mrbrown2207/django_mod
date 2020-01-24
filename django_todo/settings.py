@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 import dj_database_url
+from os import path
+if path.exists("env.py"):
+    import env
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,9 +29,8 @@ SECRET_KEY = '4ry^*^cpdtm%8-vly#c%8w2r6h^855dwm!*%b_ot6*y)^ids_j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-c3b071cb-1e86-44ff-83f3-9f8e91c23074.ws-eu01.gitpod.io', 
-                    'localhost', 
-                    'mb-django-todo.herokuapp.com']
+ALLOWED_HOSTS = [os.environ.get('HOSTNAME'), 'localhost']
+# 'mb-django-todo.herokuapp.com']
 
 
 # Application definition
@@ -84,7 +86,7 @@ DATABASES = {
     }
 }
 """
-DATABASES = {'default': dj_database_url.parse("postgres://jpmrbfxnyuegee:17cda916de2b177ded758688cc38d8cf86ffab7f5b3c2193ac44ea81a3523b5a@ec2-79-125-126-205.eu-west-1.compute.amazonaws.com:5432/d1f5ibar5i4mi0")}
+DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 
 
 # Password validation
