@@ -37,6 +37,7 @@ DEBUG = dev
 
 
 ALLOWED_HOSTS = [os.environ.get('HOSTNAME'), 'localhost']
+
 # 'mb-django-todo.herokuapp.com']
 
 
